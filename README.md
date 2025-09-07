@@ -39,7 +39,7 @@ projeto-oto/
 ```bash
 python main.py
 ```
-4. O arquivo processado será salvo na pasta **'02-raw-bronze/'** com o sufixo **_trusted.csv**.
+4. O arquivo processado será salvo na pasta **'02-trusted-silver/'** com o sufixo **_trusted.csv**.
 
 ## Dependências
 Todas as bibliotecas podem ser instaladas usando o pip:
