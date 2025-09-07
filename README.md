@@ -1,6 +1,6 @@
 # Teste Técnico - OTO  
 
-Projeto desenvolvido como resolução do teste técnico proposto pela Oto. Este projeto tem como objetivo processar arquivos CSV aplicando algumas transformaçõe.
+Projeto desenvolvido como resolução do teste técnico proposto pela Oto. Este projeto tem como objetivo processar arquivos CSV aplicando algumas transformações.
 
 O processamento é feito em **chunks de 1000 linhas**, para que arquivos grandes possam ser tratados sem travar a memória.
 
