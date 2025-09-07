@@ -1,4 +1,4 @@
-# projeto-oto# Teste Técnico - OTO  
+# Teste Técnico - OTO  
 
 Projeto desenvolvido como resolução do teste técnico proposto pela Oto. Este projeto tem como objetivo processar arquivos CSV aplicando algumas transformaçõe.
 
@@ -6,14 +6,14 @@ O processamento é feito em **chunks de 1000 linhas**, para que arquivos grandes
 
 ## Funcionalidades
 
-1. **Remover espaços** no início e fim de todas as colunas de texto.  
+1. **Remove espaços** no início e fim de todas as colunas de texto.  
 2. **Criar coluna `CITY_ASCII`** a partir da coluna `CITY`:
    - Remove acentos
    - Converte para maiúsculas
    - Mantém apenas letras, números, espaço e hífen
-3. **Limpar números de telefone** na coluna `PHONE` (remove tudo que não for número e mantem hífen).  
-4. **Processamento em chunks** de 1000 linhas para arquivos grandes.  
-5. **Detecta encoding** detectados automaticamente.
+3. **Limpa números de telefone** na coluna `PHONE` (remove tudo que não for número).  
+4. **Processa em chunks** de 1000 linhas para arquivos grandes.  
+5. **Detecta encoding** 
 
 ## Estrutura do Projeto
 ```text
@@ -32,13 +32,14 @@ projeto-oto/
 
 ## Como usar
 
-1. Coloque seu arquivo CSV dentro da pasta **`01-raw-bronze/**`.  
-2. No terminal, execute:
+1. Clone o repositório.
+2. Coloque seu arquivo CSV dentro da pasta **`01-raw-bronze/**`.  
+3. No terminal, execute:
 
 ```bash
 python main.py
 ```
-O arquivo processado será salvo na pasta **'02-raw-bronze/'** com o sufixo **_trusted.csv**.
+4. O arquivo processado será salvo na pasta **'02-raw-bronze/'** com o sufixo **_trusted.csv**.
 
 ## Dependências
 Todas as bibliotecas podem ser instaladas usando o pip:
