@@ -33,8 +33,11 @@ projeto-oto/
 ## Como usar
 
 1. Clone o repositório.
-2. Coloque seu arquivo CSV dentro da pasta **`01-raw-bronze/**`.  
-3. No terminal, execute:
+2. Coloque seu arquivo CSV dentro da pasta **`01-raw-bronze/**`.
+3. Atualize dentro do arquivo main.py os seguintes status: 
+      enter_path = "01-bronze-raw/NOME_DO_SEU_ARQUIVO.csv"
+      out_path = "02-silver-validated/NOME_DO_SEU_ARQUIVO_trusted.csv"
+4. No terminal, execute:
 
 ```bash
 python main.py
