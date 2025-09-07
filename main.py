@@ -35,10 +35,22 @@ def create_column (df, from_column = 'CITY'):
     for value in df[from_column]:
         text = str(value) 
         text = unidecode.unidecode(text) 
-        text = text.upper() a
+        text = text.upper()
         text = re.sub(r'[^A-Z0-9\- ]', '', text)
         new_column.append(text)
     df['CITY_ASCII'] = new_column
+    
+    return df
+
+def clean_numbers (df, phone_column='PHONE'):
+    # Remover os caracteres não numéricos da coluna PHONE; 
+    if phone_column in df.columns:
+        new_column = []
+        for value in df[phone_column]:
+            text = str(value)
+            text = re.sub(r'\D', '', text)
+            new_column.append(text)
+        df[phone_column] = new_column
     
     return df
 
@@ -50,10 +62,7 @@ print("Antes:")
 print(df.head()) 
 
 
-df = create_column(df, from_column='CITY')
+df = clean_numbers(df, phone_column='PHONE')
 
 print("\nDepois:")
 print(df.head())
-
-
-
