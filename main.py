@@ -2,7 +2,6 @@ import pandas as pd
 import chardet
 
 """
-1.	Identificar o encoding do arquivo;
 2.	Processar o arquivo de 1000 em 1000 linhas;
 3.	Remover os espaços das colunas. Ex. ' Porto Alegre ' -> 'Porto Alegre';
 4.	Criar uma coluna CITY_ASCII no arquivo, a qual deve ser construída com base na coluna CITY. Esta coluna não pode conter acentos, minúsculas e caracteres especiais. Apenas letras, números e hífen são permitidos. Ex. 'São Paulo - abç' -> 'SAO PAULO - ABC'
@@ -15,9 +14,24 @@ def detect_encoding(path_file: str, sample_size: int = 100000) -> str:
 
     with open(path_file, 'rb') as f:
         result = chardet.detect(f.read(sample_size))
-    return result.get('encoding', 'utf-8')
+    return result['encoding']
 
 
-encode = detect_encoding('natal2025.csv')
+caminho = '01-bronze-raw/natal2025.csv'
 
-print(encode)
+def remove_spaces(df):
+    "remove spaces"
+    for col in df.columns:
+        if df[col].dtype == object: #check if it's text
+            df[col] = df[col].str.strip()
+    return df
+
+df = pd.read_csv(caminho)
+
+print("antes")
+print(df.head())
+
+df = remove_spaces(df)
+
+print('\nDepois:')
+print(df.head())
